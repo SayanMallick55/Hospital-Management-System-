@@ -72,8 +72,8 @@ It demonstrates real-world database connectivity with a user-friendly desktop in
 ### 🔹 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd YOUR-REPO
+git clone https://github.com/SayanMallick55/Hospital-Management-System-.git
+cd Hospital-Management-System
 ```
 
 ---
@@ -131,17 +131,7 @@ python Pearl_Hospital.py
 * 👨‍⚕️ Doctors List
 * 🧪 Services
 
----
 
-## 📸 Screenshots
-
-*(Add screenshots here later)*
-
-```md
-![Dashboard](screenshots/dashboard.png)
-```
-
----
 
 ## 🔐 Security Note
 
@@ -164,7 +154,7 @@ python Pearl_Hospital.py
 
 ## 👨‍💻 Author
 
-**Sayan**
+**Sayan Mallick**
 
 ---
 
