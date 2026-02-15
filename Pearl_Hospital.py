@@ -1,5 +1,5 @@
 """
-PEARL HOSPITAL MANAGEMENT SYSTEM — MODERN SOFTWARE UI
+PEARL HOSPITAL MANAGEMENT SYSTEM 
 """
 
 import tkinter as tk
@@ -8,11 +8,11 @@ import mysql.connector as sqlcon
 import random as rd
 import getpass
 
-# ================= PASSWORD PROMPT =================
-print("🔐 Database login required")
+#  PASSWORD ASKING 
+print(" Database login required")
 db_pass = getpass.getpass("Enter MySQL root password: ")
 
-# ================= DATABASE =================
+#  DATABASE 
 con = sqlcon.connect(host="localhost", user="root", password=db_pass)
 cur = con.cursor(buffered=True)
 
@@ -45,9 +45,8 @@ cur.execute(
 )
 
 
-# =====================================================
-# ================= MAIN APP ==========================
-# =====================================================
+
+#  MAIN APP 
 class HospitalApp:
     def __init__(self, root):
         self.root = root
@@ -58,7 +57,7 @@ class HospitalApp:
         self.setup_style()
         self.build_layout()
 
-    # ---------------- STYLE ----------------
+    #  STYLE 
     def setup_style(self):
         style = ttk.Style()
         try:
@@ -69,7 +68,7 @@ class HospitalApp:
         style.configure("Sidebar.TButton", font=("Segoe UI", 10, "bold"), padding=10)
         style.configure("Header.TLabel", font=("Segoe UI", 22, "bold"))
 
-    # ---------------- LAYOUT ----------------
+    #  LAYOUT 
     def build_layout(self):
         header = ttk.Label(
             self.root,
@@ -109,7 +108,7 @@ class HospitalApp:
 
         self.show_welcome()
 
-    # ---------------- UTIL ----------------
+    #  UTIL 
     def clear_main(self):
         for widget in self.main_area.winfo_children():
             widget.destroy()
@@ -175,9 +174,9 @@ class HospitalApp:
             font=("Segoe UI", 20, "bold"),
         ).pack(pady=40)
 
-    # =====================================================
-    # ================= REGISTRATION ======================
-    # =====================================================
+    
+    #  REGISTRATION 
+     
     def show_registration(self):
         self.clear_main()
 
@@ -223,9 +222,9 @@ class HospitalApp:
         except sqlcon.Error:
             messagebox.showerror("Error", "Aadhar already registered")
 
-    # =====================================================
-    # ================= APPOINTMENT =======================
-    # =====================================================
+    
+    #  APPOINTMENT 
+  
     def show_appointment(self):
         self.clear_main()
 
@@ -288,9 +287,9 @@ class HospitalApp:
 
         messagebox.showinfo("Success", f"Doctor: {doctor}\nToken: {app_no}")
 
-    # =====================================================
-    # ================= SEARCH ============================
-    # =====================================================
+   
+    #  SEARCH
+
     def show_search(self):
         self.clear_main()
 
@@ -311,9 +310,9 @@ class HospitalApp:
 
         messagebox.showinfo("Patient Data", str(data))
 
-    # =====================================================
-    # ================= MODIFY ============================
-    # =====================================================
+
+    #  MODIFY
+
     def show_modify(self):
         self.clear_main()
 
@@ -344,9 +343,9 @@ class HospitalApp:
         con.commit()
         messagebox.showinfo("Success", "Data Updated")
 
-    # =====================================================
-    # ================= DOCTORS ===========================
-    # =====================================================
+
+    #  DOCTORS
+
     def show_doctors(self):
         self.clear_main()
 
@@ -368,9 +367,9 @@ class HospitalApp:
         for d in doctors:
             tree.insert("", "end", values=d)
 
-    # =====================================================
-    # ================= SERVICES ==========================
-    # =====================================================
+
+    #  SERVICES
+
     def show_services(self):
         self.clear_main()
 
@@ -392,7 +391,7 @@ class HospitalApp:
             tree.insert("", "end", values=s)
 
 
-# ================= RUN =================
+#  RUN 
 root = tk.Tk()
 app = HospitalApp(root)
 root.mainloop()
